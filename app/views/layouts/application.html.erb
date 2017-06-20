@@ -14,12 +14,12 @@
   </head>
   <body>
 
-     <nav>
+     <!-- <nav> -->
           <% if @current_user.present? %>
             <%= render partial: 'layouts/nav' %>
           <% end %>
           <%= yield %>
-     </nav>
+     <!-- </nav> -->
 
   </body>
 </html>

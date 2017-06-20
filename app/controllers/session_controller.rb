@@ -5,13 +5,9 @@ class SessionController < ApplicationController
   def create
 
     user = User.find_by email: params[:email]
-
     if user.present? and user.authenticate params[:password]
       # success!
       session[:user_id] = user.id
-
-
-    #   raise "hell"
       redirect_to user_path(user)
     else
       # mismatch/bad credentials
@@ -23,7 +19,7 @@ class SessionController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to root_path 
   end
 
 end

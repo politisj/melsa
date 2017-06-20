@@ -36,12 +36,13 @@ nav form#search .input-group .form-control {
 #tweet {
     margin: 0.5em;
 }
-/*
+
 .navbar-default {
     background-color: #2F92CA;
 }
-
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover {
+/*
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover {
     color: #FFF;
     -webkit-transition: all 150ms ease-in-out;
     -moz-transition: all 150ms ease-in-out;
@@ -49,20 +50,20 @@ nav form#search .input-group .form-control {
     -o-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
 }
+*/
 
 .navbar-default .navbar-nav > .active > a {
     background-color: transparent;
     color: #FFF;
     padding-bottom: 0.62em;
-    border-bottom: 0.45em solid #FFF;
-}
-
-.navbar-default .navbar-nav > .active > a:hover,.navbar-default .navbar-nav > li > a:hover {
+    border-bottom: 0.45em solid #FFF;}
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > li > a:hover {
     background-color: transparent;
     color: #F3F3F3;
     padding-bottom: 0.62em;
     border-bottom: 0.45em solid #F3F3F3;
-}*/
+}
 
 .navbar-nav .badge {
     color: #2F92CA;
@@ -162,9 +163,16 @@ form#new-message .input-group-addon {
 ul#feed {
     margin: 0;
 }
+
 ul#feed li {
     padding: 1em 1em;
+    border-bottom: 0.1rem solid #e5e5e5;
 }
+
+ul#feed li:last-child {
+    border-bottom: none;
+}
+
 ul#feed .feed-avatar {
     width: 13%;
     display: inline-block;

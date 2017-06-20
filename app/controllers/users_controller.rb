@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create user_params
+    # raise "hell"
     if @user.id.present?
       session[:user_id] = @user.id          # perform login (set session)
       redirect_to user_path(@user.id)       # /users/17

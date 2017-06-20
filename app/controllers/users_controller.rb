@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   #
   before_action :get_user,       only: [ :show, :edit, :update ]
-  # before_action :check_if_admin, only: [ :index ]
+  # before_action :check_if_admin, only: [ :show ]
 
   def get_user
     @user = User.find params["id"]

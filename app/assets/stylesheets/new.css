@@ -1,0 +1,14 @@
+section#intro-header {
+    background-image: url('');
+    background-size: cover;
+}
+
+section#intro-header .wrap-headline {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.hidden-element {
+    display: none;
+}

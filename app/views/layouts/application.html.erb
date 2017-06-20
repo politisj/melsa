@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -17,7 +14,12 @@
   </head>
   <body>
 
-    <%= yield %>
+     <nav>
+          <% if @current_user.present? %>
+            <%= render partial: 'layouts/nav' %>
+          <% end %>
+          <%= yield %>
+     </nav>
 
   </body>
 </html>

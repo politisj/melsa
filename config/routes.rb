@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: "session#new"
+ resources :users
+
+ root to: "users#new"
 
   # get '/users/new' => 'users#new'
   # post '/users/new' => 'users#create'
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   post    '/login' => 'session#create'   # check credentials & attempt login (set session)
   delete  '/login' => 'session#destroy'  # logout (destroy session)
 
-  resources :users
+
   #
   #    Prefix Verb   URI Pattern               Controller#Action
   #     users GET    /users(.:format)          users#index

@@ -1,19 +1,69 @@
-<h2>TODO Login</h2>
 
 <% if flash[:error].present? %>
   <p><strong> <%= flash[:error] %> </strong></p>
 <% end %>
 
-<%= form_tag login_path do %>
+<section id="intro-header">
+    <div class="container">
+    <div class="row">
+        <div class="wrap-headline">
 
-  <%= label_tag 'Email' %>
-  <%= email_field_tag :email, nil %>
-  <br>
+            <h1 class="text-center">Welcome !!!!</h1>
+            <hr>
 
-  <%= label_tag 'Password' %>
-  <%= password_field_tag :password, nil %>
-  <br>
+            <ul class="list-inline list-unstyled text-center">
+                <li>
+                    <a id= "sign-btn" class="btn btn-default btn-lg" href="#" role="button">Sign in</a>
+                </li>
+                <li>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Sign up</a>
+                </li>
+            </ul>
 
-  <%= submit_tag 'Login' %>
 
-<% end %>
+            <%= form_tag(login_path , id: "signin" , class: "form-inline text-center hidden-element" ) do %>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">@</div>
+
+                        <!-- <input type="text" class="form-control" id="email"  placeholder="Email"> -->
+
+
+                        <%= email_field_tag :email, nil, placeholder:"Email", class:"form-control"  %>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">*</div>
+
+                        <!-- <input type="password" class="form-control" id="password" placeholder="Password"> -->
+
+                        <%= password_field_tag :password , nil, class:"form-control" , placeholder: "Password"  %>
+
+                    </div>
+                </div>
+
+                <%= submit_tag 'Sign in' , class: "btn btn-default" %>
+            <% end %>
+
+
+
+
+
+        </div>
+    </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('#sign-btn').on('click', function(e) {
+
+            $(e.currentTarget).closest('ul').hide();
+            $('form#signin').fadeIn('fast');
+        });
+    });
+</script>

@@ -6,8 +6,8 @@
                 <%= image_tag('background-images-13.jpeg' , class: "card-img-top img-responsive" )%>
                 <div class="card-block">
                     <%= image_tag('john3.png' , class: "card-img" )%>
-                    <h4 class="card-title">John Politis <small>@johnpolitis</small></h4>
-                    <p class="card-text">card text goes here?</p>
+                    <h4 class="card-title"><%=@user.name%><small><%=@user.email%></small></h4>
+                    <p class="card-text"><%=@user.job_title%></p>
                     <ul class="list-inline list-unstyled">
                     <li id="card-tweets">
                         <a href="#">
@@ -42,53 +42,28 @@
                         </div>
                     </form>
                     <ul id="feed" class="list-unstyled">
-                        <li>
-                            <!-- <img src="imgs/doge.jpg" class="feed-avatar img-circle"> -->
-                            <%= image_tag('/assets/doge.jpg' , class: 'feed-avatar img-circle') %>
-                            <div class="feed-post">
-                                <h5>Name <small>@namex - 3h</small></h5>
-                                <p> Post message contents goes here!!!!</p>
-                            </div>
-                            <div class="action-list">
-                                <a href="#">
-                                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                                </a>
-                                <a href="#">
-                                    <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span>
-                                    <span class="retweet-count">6</span>
-                                </a>
-                                <a href="#">
-                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                </a>
-                            </div>
-                        </li>
-
-                        <!-- /TODO// -->
-                        <li>
-                        <img src="imgs/laika.jpg" class="feed-avatar img-circle">
-                        <div class="feed-post">
-                        <h5>Laika <small>@spacesog - 4h</small></h5>
-                        <p>That's one small step for a dog, one giant leap for
-                        giant</p>
-                        </div>
-                        <div class="action-list">
-                        <a href="#">
-                        <span class="glyphicon glyphicon-share-alt" aria-
-                        hidden="true"></span>
-                        </a>
-                        <a href="#">
-                        <span class="glyphicon glyphicon-refresh" aria-
-                        hidden="true"></span>
-                        <span class="retweet-count">6</span>
-                        </a>
-                        <a href="#">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></
-                        span>
-                        </a>
-                        </div>
-                        </li>
-
-                        <!-- /TODO// -->
+                        <% @user.posts.each do | comment | %>
+                            <li>
+                                <%= image_tag('/assets/doge.jpg' , class: 'feed-avatar img-circle') %>
+                                <div class="feed-post">
+                                    <h5><%= comment.title%><small>&nbsp;<%=@user.name%> - @namex - 3h</small></h5>
+                                    <hr>
+                                    <p><%= comment.content%></p>
+                                </div>
+                                <div class="action-list">
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span>
+                                        <span class="retweet-count">6</span>
+                                    </a>
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </li>
+                        <%end%>
                     </ul>
                 </div>
                 <nav class="text-center">

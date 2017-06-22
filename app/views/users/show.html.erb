@@ -3,9 +3,10 @@
     <div class="row">
         <div id="profile" class="col-md-3 hidden-sm hidden-xs">
             <div id="profile-resume" class="card">
-                <%= image_tag('background-images-13.jpeg' , class: "card-img-top img-responsive" )%>
+                <%#= image_tag('/assets/background-images-13.jpeg' , class: "card-img-top img-responsive" )%>
+     <img src="/assets/background-images-13.jpeg" class="card-img-top img-responsive">
                 <div class="card-block">
-                    <%= image_tag('john3.png' , class: "card-img" )%>
+                    <%= image_tag('/assets/john3.png' , class: "card-img" )%>
                     <h4 class="card-title"><%=@user.name%><small><%=@user.email%></small></h4>
                     <p class="card-text"><%=@user.job_title%></p>
                     <ul class="list-inline list-unstyled">

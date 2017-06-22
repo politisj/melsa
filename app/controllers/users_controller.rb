@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :get_user,       only: [ :show, :edit, :update ]
+  before_action :get_user,              only: [ :show, :edit, :update ]
+  # before_action :check_if_logged_in,     only: [:edit , :update ]
 
   def get_user
     @user = User.find params["id"]
@@ -11,12 +12,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create user_params
-
     if @user.id.present?
       session[:user_id] = @user.id          # perform login (set session)
       redirect_to user_path(@user.id)       # /users/17
     else
-       @user.save
        render :new
     end
 
@@ -27,12 +26,21 @@ class UsersController < ApplicationController
   end
 
   def show
+    # catches URLS like /users/:id
+    # @user = User.find params["id"]   # now in before_action
   end
 
   def edit
+    # @user = User.find params["id"]   # now in before_action
+    redirect_to root_path unless @current_user == @user
   end
 
   def update
+    # @user = User.find params["id"]   # now in before_action
+    # redirect_to root_path unless @current_user == @user
+
+    @user = @current_user # makes sure user can only edit their own profile
+
     @user.update user_params
     redirect_to user_path( params["id"] )
   end

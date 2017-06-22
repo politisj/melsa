@@ -7,19 +7,16 @@
     <div class="container">
     <div class="row">
         <div class="wrap-headline">
-
             <h1 class="text-center">Welcome !!!!</h1>
             <hr>
-
             <ul class="list-inline list-unstyled text-center">
                 <li>
                     <a id= "sign-btn" class="btn btn-default btn-lg" href="#" role="button">Sign in</a>
                 </li>
                 <li>
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Sign up</a>
+                    <%= link_to 'Sing Up', new_user_path , class:"btn btn-primary btn-lg" , role:"button"%>
                 </li>
             </ul>
-
             <%= form_tag(login_path , id: "signin" , class: "form-inline text-center hidden-element" ) do %>
                 <div class="form-group">
                     <div class="input-group">
@@ -27,7 +24,6 @@
                         <%= email_field_tag :email, nil, placeholder:"Email", class:"form-control"  %>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">*</div>
@@ -43,9 +39,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-
         $('#sign-btn').on('click', function(e) {
-
             $(e.currentTarget).closest('ul').hide();
             $('form#signin').fadeIn('fast');
         });

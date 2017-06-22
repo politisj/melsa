@@ -48,7 +48,7 @@
                   </button>
 
                   <ul class="dropdown-menu">
-                       <li><a href="#">Profile</a></li>
+                     <li><a href="#">Profile</a></li>
                       <li><a href="#">Setting</a></li>
                       <li role="separator" class="divider"></li>
                       <% if @current_user.present? %>
@@ -67,7 +67,7 @@
       </div>
   </nav>
 
-  <div class="modal fade" id="tweet-modal" tabindex="-1" role="dialog">
+  <!-- <div class="modal fade" id="twe1et-modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
@@ -76,21 +76,21 @@
                   </button>
                   <h4 class="modal-title">Subject</h4>
               </div>
-              <div class="modal-body"></div>
+              <div class="modal-body">
 
-               <%=form_for Post.new do |f| %>
-                <%= f.label :title %>
-                <%= f.text_field :title %>
-                <%= f.label :content %>
-                <%= f.text_area :content %>
-                <%= f.submit %>
-              <% end %>
+                  <!--# <%=form_for Post.new do |f| %>
+                    <%= f.label :title %>
+                    <%= f.text_field :title %>
+                    <%= f.label :content %>
+                    <%= f.text_area :content %>
+                    <%= f.submit %>
+                  <% end %> -->
 
-
+              </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
               </div>
           </div>
       </div>
-  </div>
+  </div> -->

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+ resources :posts
   root to: "session#new"
 
   get     '/login' => 'session#new'       # login form

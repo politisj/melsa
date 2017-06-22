@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   before_action :get_user,              only: [ :show, :edit, :update ]
-  # before_action :check_if_logged_in,     only: [:edit , :update ]
+  before_action :check_if_logged_in,    only: [ :show, :edit, :update ]
 
   def get_user
     @user = User.find params["id"]
   end
 
   def new
-    @user = User.new
+    @user = User.new    
   end
 
   def create

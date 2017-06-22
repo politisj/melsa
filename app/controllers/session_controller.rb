@@ -1,5 +1,10 @@
 class SessionController < ApplicationController
+
   def new
+
+      if @current_user.present?
+          redirect_to user_path(@current_user)
+      end
   end
 
   def create
@@ -7,7 +12,7 @@ class SessionController < ApplicationController
     user = User.find_by email: params[:email]
     if user.present? and user.authenticate params[:password]
       # success!
-      session[:user_id] = user.id
+      session[:user_id] = user.id    
       redirect_to user_path(user)
     else
       # mismatch/bad credentials

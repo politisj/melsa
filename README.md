@@ -1,24 +1,29 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Melsa Social and media networking
 
-Things you may want to cover:
+Melsa is an online social media and social networking service available to anyone that wants to callaborate or to keep in touch with friends.
 
-* Ruby version
+Melsa may be accessed by a large range of desktops, laptops, tablet computers, and smartphones over the Internet and mobile networks. After registering to use the site, users can create a user profile indicating their name, occupation, schools attended and so on.
 
-* System dependencies
+Currently the initial release of Melsa only supports posting messages.
 
-* Configuration
+Melsa is available at [Heroku](https://melsa.herokuapp.com)
 
-* Database creation
 
-* Database initialization
+## Future features
 
-* How to run the test suite
+-   The ability to follow people
+-   Notifications
+-   Messages
+-   Users commenting on Posts
+-   The ability to upload images
 
-* Services (job queues, cache servers, search engines, etc.)
+## System dependencies
 
-* Deployment instructions
+- jQuery
+- Bootstrap 3.4
+- Ruby on Rails 5.1.1
+- Postgres 9.5
 
-* ...
+
+![alt text](http://res.cloudinary.com/diess6mgu/image/upload/v1498175858/melsa-intro_xgtmin.png)

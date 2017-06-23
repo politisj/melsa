@@ -25,5 +25,6 @@ Melsa is available at [Heroku](https://melsa.herokuapp.com)
 - Ruby on Rails 5.1.1
 - Postgres 9.5
 
+## Melsa user's screen
 
 ![alt text](http://res.cloudinary.com/diess6mgu/image/upload/v1498175858/melsa-intro_xgtmin.png)
